@@ -7,14 +7,11 @@ import (
 )
 
 type User struct {
-	ID          primitive.ObjectID `json:"id" bson:"_id"`
-	Username    string             `json:"username" bson:"username"`
-	Password    string             `json:"password" bson:"password"`
-	Permissions []Permissions      `json:"permissions" bson:"permissions"`
-	CreatedAt   time.Time          `json:"created_at" bson:"created_at"`
-}
-type Permissions struct {
-	Entry     int  `json:"entry" bson:"entry"`
-	AddFlag   bool `json:"add_flag" bson:"add_flag"`
-	AdminFlag bool `json:"admin_flag" bson:"admin_flag"`
+	ID            primitive.ObjectID `json:"id" bson:"_id"`
+	Username      string             `json:"username" bson:"username"`
+	Password      string             `json:"password" bson:"password"`
+	Role          string             `json:"role" bson:"role"`
+	AccountLocked bool               `json:"account_locked" bson:"account_locked"`
+	CreatedAt     time.Time          `json:"created_at" bson:"created_at"`
+	UpdatedAt     time.Time          `json:"updated_at" bson:"updated_at"`
 }
